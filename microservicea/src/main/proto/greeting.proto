@@ -1,0 +1,32 @@
+syntax="proto3";
+
+option java_multiple_files = true;
+option java_package="com.example.microservicea";
+option java_outer_classname="GreetingProto";
+
+
+
+service GreetingService {
+    rpc performTask (GreetingRequest) returns (GreetingResponse);
+}
+
+message GreetingRequest {
+    string name = 1;
+}
+
+message GreetingResponse {
+    string message = 1;
+}
+
+
+
+service GreetingServiceB{
+    rpc processNotification (GreetingRequestB) returns (GreetingResponseB);
+}
+
+message GreetingRequestB {
+    string name = 1;
+}
+message GreetingResponseB {
+    string message = 1;
+}
